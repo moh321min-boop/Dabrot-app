@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Tags: تحسين محركات البحث للظهور في وهران -->
+    <title>Dabrot | حجز مواعيد حلاقة في وهران - بئر الجير</title>
+    <meta name="description" content="منصة دابروت لحجز مواعيد الحلاقة في وهران. احجز دالتك الآن ووفر وقتك في صالونات بئر الجير والسانيا.">
+    <meta name="keywords" content="حلاق وهران, حلاقة بئر الجير, حجز حلاق وهران, Dabrot Oran, Coiffeur Oran">
+    <meta name="author" content="Dabrot System">
+
+    <!-- Styles & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Cairo', sans-serif; background-color: #020617; scroll-behavior: smooth; }
+        .glass-card { background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); }
+        .step-hidden { display: none; }
+        .step-active { animation: fadeIn 0.5s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .selected-summary { background: rgba(59, 130, 246, 0.1); border: 1px dashed #3b82f6; }
+        
+    </style>
+</head>
+<body class="text-slate-100">
+
+    <!-- Navigation -->
+    <nav class="p-5 border-b border-white/5 flex justify-between items-center sticky top-0 bg-[#020617]/90 backdrop-blur-xl z-[100]">
+        <div class="flex items-center gap-3">
+            <!-- ------------------------------- -->
+            <div class="flex items-center gap-4 group cursor-pointer" onclick="location.reload()">
+                <div class="relative w-14 h-14">
+                    <div class="absolute inset-0 bg-blue-600 rounded-2xl rotate-3 group-hover:rotate-12 group-hover:scale-105 transition-all duration-300 shadow-xl shadow-blue-600/30"></div>
+                    
+                    <div class="absolute inset-0 bg-slate-900 border border-blue-500/40 rounded-2xl flex items-center justify-center overflow-hidden z-10">
+                        
+                        <img src="logo.png" alt="Dabrot Premium" class="w-10 h-10 object-contain z-20 group-hover:scale-110 transition-transform duration-300">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] transition-transform z-30"></div>
+                        
+                        <div class="absolute inset-0 bg-blue-500/10 rounded-full blur-2xl z-10"></div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col -space-y-1">
+                    <span class="text-3xl font-black tracking-tighter text-white italic uppercase group-hover:text-blue-500 transition-colors">Dabrot</span>
+                    <span class="text-[9px] font-bold text-blue-400 tracking-[0.4em] uppercase mr-1 opacity-80">Premium Barbers</span>
+                </div>
+            </div>
+                <!-- ------------------------------ -->
+        </div>
+        <div class="flex flex-col items-end">
+            <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">الموقع الحالي</span>
+            <span class="text-xs font-bold text-slate-400 italic">وهران - بئر الجير</span>
+        </div>
+    </nav>
+
+    <main class="max-w-md mx-auto px-6 py-10 space-y-8">
+        
+        <!-- Welcome Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-black mb-3 leading-tight">احجز دالتك <br><span class="text-blue-500 underline decoration-2 underline-offset-8">بكل سهولة</span></h1>
+            <p class="text-slate-500 text-sm mt-4 uppercase tracking-widest font-bold">بدون انتظار . بدون عناء</p>
+        </header>
+
+        <!-- Step 1: Services -->
+        <section id="section-1" class="step-active">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xs font-black text-blue-500 uppercase tracking-widest">1. اختر نوع الخدمة</h3>
+                <span id="summary-1" class="hidden text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full font-bold"></span>
+            </div>
+            
+            <div id="grid-1" class="grid grid-cols-1 gap-3">
+                <button onclick="selectService('حلاقة شعر', '400 دج', this)" class="p-5 rounded-2xl glass-card text-right hover:border-blue-500 transition-all flex justify-between items-center group">
+                    <div>
+                        <div class="font-bold text-lg group-hover:text-blue-400 transition">حلاقة شعر</div>
+                        <div class="text-[10px] text-slate-500 uppercase font-bold">20 دقيقة تقريباً</div>
+                    </div>
+                    <div class="font-black text-xl">400 دج</div>
+                </button>
+                <button onclick="selectService('حلاقة لحية', '200 دج', this)" class="p-5 rounded-2xl glass-card text-right hover:border-blue-500 transition-all flex justify-between items-center group">
+                    <div>
+                        <div class="font-bold text-lg group-hover:text-blue-400 transition">حلاقة لحية</div>
+                        <div class="text-[10px] text-slate-500 uppercase font-bold">10 دقيقة تقريباً</div>
+                    </div>
+                    <div class="font-black text-xl">200 دج</div>
+                </button>
+                <button onclick="selectService('خدمة كاملة', '600 دج', this)" class="p-5 rounded-2xl glass-card border-amber-500/20 text-right hover:border-amber-500 transition-all flex justify-between items-center group">
+                    <div>
+                        <div class="font-bold text-lg text-amber-500">خدمة كاملة</div>
+                        <div class="text-[10px] text-slate-500 uppercase font-bold">30 دقيقة تقريباً</div>
+                    </div>
+                    <div class="font-black text-xl text-amber-500">600 دج</div>
+                </button>
+            </div>
+        </section>
+
+        <!-- Step 2: Time Slots -->
+        
+        <section id="section-2" class="step-hidden">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xs font-black text-blue-500 uppercase tracking-widest">2. اختر التوقيت المتاح</h3>
+                <span id="summary-2" class="hidden text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full font-bold"></span>
+            </div>
+            <div id="grid-2" class="grid grid-cols-3 gap-2">
+                <!-- Slots populated by JS -->
+            </div>
+        </section>
+
+        <!-- Step 3: Confirmation -->
+        <section id="section-3" class="step-hidden">
+            <h3 class="text-xs font-black text-blue-500 uppercase tracking-widest mb-4">3. بيانات الاتصال</h3>
+            <div class="glass-card p-6 rounded-[2.5rem] shadow-2xl space-y-4">
+                <div class="space-y-1">
+                    <label class="text-[10px] font-bold text-slate-500 mr-2 uppercase">الاسم الكامل</label>
+                    <input id="userName" type="text" placeholder="مثال: محمد الباهي" class="w-full bg-black/50 border border-white/5 p-4 rounded-xl focus:border-blue-500 outline-none transition placeholder:text-slate-700">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[10px] font-bold text-slate-500 mr-2 uppercase">رقم الهاتف</label>
+                    <input id="userPhone" type="tel" placeholder="0553 16 39 65" maxlength="10" class="w-full bg-black/50 border border-white/5 p-4 rounded-xl focus:border-blue-500 outline-none transition text-left placeholder:text-slate-700 font-mono">
+                </div>
+                <button onclick="confirmBooking()" id="mainBtn" class="w-full py-5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-black text-lg transition-all shadow-xl shadow-blue-600/20 active:scale-95 flex items-center justify-center gap-3 mt-4">
+                    تأكيد الحجز الآن
+                </button>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="text-center text-slate-800 text-[10px] font-bold tracking-[0.4em] uppercase py-10 mt-10">
+        Dabrot System - Oran MVP 1.0
+    </footer>
+
+    <!-- Firebase & Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    
+        // --- إعدادات الحماية والتشغيل التجريبي /---
+        let firebaseApp, db, auth;
+        let currentUser = null;
+        let selection = { service: '', price: '', time: '' };
+    
+        try {
+            // التحقق من وجود الإعدادات (لتجنب تعليق الكود في كروم)
+            const config = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+            const appId = typeof __app_id !== 'undefined' ? __app_id : 'test-app-id';
+    
+            if (config) {
+                firebaseApp = initializeApp(config);
+                db = getFirestore(firebaseApp);
+                auth = getAuth(firebaseApp);
+    
+                signInAnonymously(auth).catch(e => console.warn("Firebase Auth Offline"));
+                onAuthStateChanged(auth, (user) => { currentUser = user; });
+            }
+        } catch (e) {
+            console.error("Firebase Config missing - Running in Preview Mode");
+        }
+    
+        // --- الوظائف الأساسية (مربوطة بالنافذة لتعمل مع الأزرار) ---
+    
+        // 1. اختيار الخدمة
+        window.selectService = (name, price, btn) => {
+            selection.service = name;
+            selection.price = price;
+    
+            document.getElementById('summary-1').innerText = name;
+            document.getElementById('summary-1').classList.remove('hidden');
+            document.getElementById('grid-1').classList.add('opacity-30', 'pointer-events-none');
+            
+            const section2 = document.getElementById('section-2');
+            section2.classList.replace('step-hidden', 'step-active');
+            
+            renderTimeSlots();
+            window.scrollTo({ top: section2.offsetTop - 100, behavior: 'smooth' });
+        };
+    
+        // 2. عرض المواعيد المتاحة
+        function renderTimeSlots() {
+            const grid = document.getElementById('grid-2');
+            grid.innerHTML = '';
+            const times = ["09:00", "09:45", "10:30", "11:15", "14:00", "14:45", "15:30", "16:15", "17:00"];
+            
+            times.forEach(t => {
+                const b = document.createElement('button');
+                b.innerText = t;
+                b.className = "py-4 rounded-xl glass-card font-bold hover:border-blue-500 transition active:scale-95";
+                b.onclick = () => {
+                    selection.time = t;
+                    document.getElementById('summary-2').innerText = t;
+                    document.getElementById('summary-2').classList.remove('hidden');
+                    document.getElementById('grid-2').classList.add('opacity-30', 'pointer-events-none');
+                    
+                    const section3 = document.getElementById('section-3');
+                    section3.classList.replace('step-hidden', 'step-active');
+                    window.scrollTo({ top: section3.offsetTop - 100, behavior: 'smooth' });
+                };
+                grid.appendChild(b);
+            });
+        }
+    
+        // 3. تأكيد الحجز النهائي
+        
+        window.confirmBooking = async () => {
+            const name = document.getElementById('userName').value.trim();
+            // الحصول على الرقم بدون فراغات لإرساله لقاعدة البيانات بشكل نظيف
+            const rawPhone = document.getElementById('userPhone').value.replace(/\s/g, ''); 
+            const btn = document.getElementById('mainBtn');
+
+            // 1. التحقق من البيانات (الاسم والرقم)
+            if (!name || rawPhone.length < 10) {
+                alert("خويا، كمل اسمك ورقم الهاتف باش نقدروا نحكمولك البلاصة");
+                return;
+            }
+
+            // 2. التحقق من أن الرقم يبدأ ببادئة جزائرية صحيحة
+            const validPrefix = /^(05|06|07)/;
+            if (!validPrefix.test(rawPhone)) {
+                alert("رقم الهاتف لازم يبدأ بـ 05 أو 06 أو 07");
+                return;
+            }
+
+            // تغيير حالة الزر لمنع الضغط المتكرر
+            btn.disabled = true;
+            btn.innerHTML = `<span class="animate-spin inline-block mr-2">⏳</span> جاري الحجز...`;
+
+            if (db && currentUser) {
+                try {
+                    const appId = typeof __app_id !== 'undefined' ? __app_id : 'dabrot-app-id';
+                    const path = collection(db, 'artifacts', appId, 'public', 'data', 'registrations');
+                    
+                    await addDoc(path, {
+                        type: 'appointment',
+                        customerName: name,
+                        customerPhone: rawPhone, // نرسل الرقم الصافي بدون فراغات (أفضل للتخزين)
+                        service: selection.service,
+                        time: selection.time,
+                        status: 'pending',
+                        createdAt: serverTimestamp(),
+                        userId: currentUser.uid
+                    });
+
+                    // إظهار شاشة النجاح
+                    document.getElementById('finalMsg').innerText = `شكراً ${name}! موعدك مع الحلاق اليوم على الساعة ${selection.time}.`;
+                    document.getElementById('doneScreen').classList.remove('hidden');
+
+                } catch (err) {
+                    console.error("Database Error:", err);
+                    alert("كاين مشكل في الاتصال، عاود جرب.");
+                    btn.disabled = false;
+                    btn.innerHTML = "تأكيد الحجز الآن";
+                }
+            } else {
+                // حالة تجريبية إذا لم يكن الفايربيس متصلاً
+                setTimeout(() => {
+                    document.getElementById('finalMsg').innerText = `(وضع التجربة) شكراً ${name}! موعدك هو ${selection.time}.`;
+                    document.getElementById('doneScreen').classList.remove('hidden');
+                }, 1000);
+            }
+        };
+        
+        window.formatPhoneNumber = (input) => {
+            // 1. حذف أي شيء ليس رقماً
+            let num = input.value.replace(/\D/g, '');
+            
+            // 2. حد أقصى 10 أرقام
+            num = num.substring(0, 10);
+            
+            // 3. تطبيق نمط 4-2-2 (النمط الجزائري المعتاد)
+            let formatted = "";
+            if (num.length > 0) {
+                // أول 4 أرقام (مثلاً 0550)
+                formatted += num.substring(0, 4);
+                if (num.length > 4) {
+                    // مسافة ثم رقمين (مثلاً 11)
+                    formatted += " " + num.substring(4, 6);
+                }
+                if (num.length > 6) {
+                    // مسافة ثم رقمين (مثلاً 22)
+                    formatted += " " + num.substring(6, 8);
+                }
+                if (num.length > 8) {
+                    // مسافة ثم آخر رقمين (مثلاً 33)
+                    formatted += " " + num.substring(8, 10);
+                }
+            }
+            
+            // 4. تحديث القيمة في الحقل
+            input.value = formatted;
+        };
+
+    </script>
+</body>
+</html>
